@@ -1,0 +1,28 @@
+body {
+  background-color: #02111B;
+}
+/*only need basic css to start but leave room for growth*/
+#wizards {
+  display: flex;
+  flex-flow: row, wrap;
+  justify-content: center;
+  background-color: #5D737E;
+  border: 10px outset #3e4d55;
+  width: 75%;
+  border-radius: 5px;
+  margin: auto;
+  gap: 20px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.profile-el {
+  height: 300px;
+  width: 200px;
+  background-image: linear-gradient(#FCFCFC, #5D737E);
+  border: 3px solid #52050A;
+  border-radius: 25px;
+}
+.name-el {
+}
+.house-el {
+}
