@@ -2,7 +2,7 @@ body {
   background-color: #02111B;
 }
 /*only need basic css to start but leave room for growth*/
-#wizards {
+.school {
   display: flex;
   flex-flow: row, wrap;
   justify-content: center;
@@ -21,8 +21,75 @@ body {
   background-image: linear-gradient(#FCFCFC, #5D737E);
   border: 3px solid #52050A;
   border-radius: 25px;
+  min-width: 200px;
 }
-.name-el {
+.title {
+  display: block;
+  margin: auto;
+  font-size: 100px;
+  font-weight: 400;
+  color: #FCFCFC;
+  text-align: center;
 }
-.house-el {
+.subtitle {
+  display: block;
+  margin: auto;
+  font-size: 30px;
+  font-weight: 200;
+  color: #FCFCFC;
+  text-align: center;
+}
+#student-form {
+  display: block;
+  margin: auto;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #FCFCFC;
+}
+#submit-el {
+  background-color: #5D737E;
+  color: #52050A;
+  font-weight: 200;
+}
+#house-filters {
+  display: flex;
+  height: 75px;
+  padding-bottom: 20px;
+  justify-content: space-evenly;
+}
+#view-all, #Gryffindor, #Hufflepuff, #Ravenclaw, #Slytherin {
+  height: 50px;
+  width: 225px;
+  border: 5px solid black;
+  border-radius: 50px;
+  color: #FCFCFC;
+  text-shadow: 0px 0px 3px black;
+  font-weight: 300;
+  font-size: 15px;
+}
+#view-all {
+  background-color: #5D737E;
+}
+#Gryffindor {
+  background-color: #740001;
+  border-color: #d3a625;
+}
+#Hufflepuff {
+  background-color: #ecb939;
+  border-color: #372e29;
+}
+#Ravenclaw {
+  background-color: #0e1a40;
+  border-color: #946b2d;
+}
+#Slytherin {
+  background-color: #1a472a;
+  border-color: #aaaaaa;
+}
+.subtitle-2 {
+  color: #FCFCFC;
+  font-size: 30px;
+  text-align: center;
+  text-decoration: underline;
 }
