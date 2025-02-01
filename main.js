@@ -23,15 +23,16 @@ const startApp = (e) => {
     hogwartsStudents.innerHTML = renderItem;
   };
 
-  const studentHouses = (a) => {
+  const studentHouses = (a, b) => {
     let profile = ""
     for (let i = 0; i < a.length; i++) {
       profile += `<div class="profile-el">
       <h1 class="name-el">${a[i].name}</h1>
       <h3 class="house-el">${a[i].house}</h3>
+      <button class="expel-el" id="expel--${a[i].id}">Expel</button>
       </div>`
     }
-    render("#wizards", profile)
+    render(b, profile)
   }
 //
 
@@ -48,7 +49,7 @@ const startApp = (e) => {
       house: randomHouse
     }
     students.push(firstYear)
-    studentHouses(students)
+    studentHouses(students, "#wizards")
     form.reset()
     consoleTest()
   }
@@ -56,7 +57,7 @@ const startApp = (e) => {
 
 //filter buttons
   const viewAll = document.querySelector("#view-all")
-  viewAll.addEventListener("click", () => studentHouses(students))
+  viewAll.addEventListener("click", () => studentHouses(students, "#wizards"))
   const Gryffindor = document.querySelector("#Gryffindor")
   Gryffindor.addEventListener("click", () => houseFilter("Gryffindor"))
   const Hufflepuff = document.querySelector("#Hufflepuff")
@@ -68,11 +69,23 @@ const startApp = (e) => {
 //
 
 //filter button function
-const houseFilter = (houses) => {
-  const cardfilter = students.filter(value => value.house === houses)
-  studentHouses(cardfilter)
-}
+  const houseFilter = (houses) => {
+    const cardfilter = students.filter(value => value.house === houses)
+    studentHouses(cardfilter, "#wizards")
+  }
 //
-  studentHouses(students)
+
+//Expelling students
+  const ExpelBtn = document.querySelector("#wizards")
+  ExpelBtn.addEventListener('click', (e) => {
+    if (e.target.id.includes("expel")) {
+      const [, id] = e.target.id.split("--")
+      const index = students.findIndex( e => e.id === Number(id))
+      const theExpelled = students.splice(index, 1)
+      studentHouses(theExpelled, "#dark-wizards")
+      studentHouses(students, "#wizards")
+    }
+  })
+//
 }
 startApp()

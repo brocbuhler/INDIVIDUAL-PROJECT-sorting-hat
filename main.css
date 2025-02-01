@@ -2,7 +2,7 @@ body {
   background-color: #02111B;
 }
 /*only need basic css to start but leave room for growth*/
-#wizards {
+.school {
   display: flex;
   flex-flow: row, wrap;
   justify-content: center;
