@@ -8,18 +8,18 @@ const startApp = (e) => {
   const students = [
     {id: 1,
     name: "Broc",
-    house: "Ravenclaw"},
+    house: "images/Ravenclaw.jpg"},
     {id:2,
     name: "Carlyn",
-    house: "Hufflepuff"},
+    house: "images/Hufflepuff.jpg"},
     {id:3,
     name: "Barnabas",
-    house: "Slytherin"}
+    house: "images/Slytherin.jpg"}
   ]
   let darkArmy = [
     {id: students.length,
     name: "Tyler",
-    house: "Slytherin"
+    house: "images/Slytherin.jpg"
     }
   ]
 //
@@ -33,8 +33,8 @@ const startApp = (e) => {
     let profile = ""
     for (let i = 0; i < a.length; i++) {
       profile += `<div class="profile-el">
-      <h1 class="name-el">${a[i].name}</h1>
-      <h3 class="house-el">${a[i].house}</h3>
+      <p class="name-el">${a[i].name}</p>
+      <img class="house-el" src="${a[i].house}">
       <button class="expel-el" id="expel--${a[i].id}">Expel</button>
       </div>`
     }
@@ -47,7 +47,7 @@ const startApp = (e) => {
   studentForm.addEventListener("submit", newStudent)
   function newStudent(a) {
     a.preventDefault()
-    let clans = ["Ravenclaw", "Gryffindor", "Slytherin", "Hufflepuff"]
+    let clans = ["images/Ravenclaw.jpg", "images/Gryfindor.jpg", "images/Slytherin.jpg", "images/Hufflepuff.jpg"]
     let randomHouse = clans[Math.floor(Math.random() * 4)]
     let firstYear = {
       id: students.length + 1,
@@ -66,13 +66,13 @@ const startApp = (e) => {
   viewAll.addEventListener("click", () => studentHouses(darkArmy, "#dark-wizards"))
   viewAll.addEventListener("click", () => studentHouses(students, "#wizards"))
   const Gryffindor = document.querySelector("#Gryffindor")
-  Gryffindor.addEventListener("click", () => houseFilter("Gryffindor"))
+  Gryffindor.addEventListener("click", () => houseFilter("images/Gryfindor.jpg"))
   const Hufflepuff = document.querySelector("#Hufflepuff")
-  Hufflepuff.addEventListener("click", () => houseFilter("Hufflepuff"))
+  Hufflepuff.addEventListener("click", () => houseFilter("images/Hufflepuff.jpg"))
   const Ravenclaw = document.querySelector("#Ravenclaw")
-  Ravenclaw.addEventListener("click", () => houseFilter("Ravenclaw"))
+  Ravenclaw.addEventListener("click", () => houseFilter("images/Ravenclaw.jpg"))
   const Slytherin = document.querySelector("#Slytherin")
-  Slytherin.addEventListener("click", () => houseFilter("Slytherin"))
+  Slytherin.addEventListener("click", () => houseFilter("images/Slytherin.jpg"))
 //
 
 //filter button function
