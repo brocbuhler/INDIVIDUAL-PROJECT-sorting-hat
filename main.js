@@ -16,6 +16,12 @@ const startApp = (e) => {
     name: "Barnabas",
     house: "Slytherin"}
   ]
+  let darkArmy = [
+    {id: students.length,
+    name: "Tyler",
+    house: "Slytherin"
+    }
+  ]
 //
 //basic rendering of object
   const render = (IdEl, renderItem) => {
@@ -57,6 +63,7 @@ const startApp = (e) => {
 
 //filter buttons
   const viewAll = document.querySelector("#view-all")
+  viewAll.addEventListener("click", () => studentHouses(darkArmy, "#dark-wizards"))
   viewAll.addEventListener("click", () => studentHouses(students, "#wizards"))
   const Gryffindor = document.querySelector("#Gryffindor")
   Gryffindor.addEventListener("click", () => houseFilter("Gryffindor"))
@@ -78,11 +85,12 @@ const startApp = (e) => {
 //Expelling students
   const ExpelBtn = document.querySelector("#wizards")
   ExpelBtn.addEventListener('click', (e) => {
+    e.preventDefault
     if (e.target.id.includes("expel")) {
       const [, id] = e.target.id.split("--")
       const index = students.findIndex( e => e.id === Number(id))
-      const theExpelled = students.splice(index, 1)
-      studentHouses(theExpelled, "#dark-wizards")
+      darkArmy.push(students.splice(index, 1)[0])
+      studentHouses(darkArmy, "#dark-wizards")
       studentHouses(students, "#wizards")
     }
   })
