@@ -1,7 +1,10 @@
+@font-face {
+  font-family: lumos;
+  src: url("LUMOS.TTF");
+}
 body {
   background-color: #02111B;
 }
-/*only need basic css to start but leave room for growth*/
 .school {
   display: flex;
   flex-flow: row, wrap;
@@ -15,6 +18,22 @@ body {
   padding-top: 30px;
   padding-bottom: 30px;
 }
+.expel-el {
+  display: block;
+  margin: auto;
+  color: #FCFCFC;
+  background-color: #02111B;
+  font-weight: 400;
+  border: none;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  width: 70px;
+  padding: 2px 0;
+}
+.expel-el:hover {
+  border: 5px inset #52050A;
+  background-color: red;
+}
 .profile-el {
   height: 300px;
   width: 200px;
@@ -23,6 +42,15 @@ body {
   border-radius: 25px;
   min-width: 200px;
 }
+.name-el {
+  text-align: center;
+}
+.house-el {
+  height: 200px;
+  width: 140px;
+  display: block;
+  margin: auto;
+}
 .title {
   display: block;
   margin: auto;
@@ -30,6 +58,7 @@ body {
   font-weight: 400;
   color: #FCFCFC;
   text-align: center;
+  font-family: lumos;
 }
 .subtitle {
   display: block;
