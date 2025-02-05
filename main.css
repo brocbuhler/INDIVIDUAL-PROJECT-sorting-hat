@@ -6,7 +6,7 @@ body {
 }
 .school {
   display: flex;
-  flex-flow: row, wrap;
+  flex-flow: row wrap;
   justify-content: center;
   background-color: #5D737E;
   border: 10px outset #3e4d55;
