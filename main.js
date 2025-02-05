@@ -23,6 +23,13 @@ const startApp = (e) => {
     }
   ]
 //
+//base website rendering
+  const allStudents = document.querySelector("#AllStudents")
+  allStudents.innerHTML = `<h3 class="subtitle-2">First Years</h3>
+  <div class = "school" id="wizards"></div>
+  <h3 class="subtitle-2">Dark Lord's Army</h3>
+  <div class = "school" id="dark-wizards"></div>`
+//
 //basic rendering of object
   const render = (IdEl, renderItem) => {
     const hogwartsStudents = document.querySelector(IdEl);
@@ -31,14 +38,28 @@ const startApp = (e) => {
 
   const studentHouses = (a, b) => {
     let profile = ""
-    for (let i = 0; i < a.length; i++) {
-      profile += `<div class="profile-el">
-      <p class="name-el">${a[i].name}</p>
-      <img class="house-el" src="${a[i].house}">
-      <button class="expel-el" id="expel--${a[i].id}">Expel</button>
-      </div>`
+    if (a === darkArmy) {
+      for (let i = 0; i < a.length; i++) {
+        const edgeLord = ["images/volde1.jpg", "images/volde2.webp", "images/volde3.jpg", "images/volde4.jpg", "images/volde5.jpg", "images/volde6.jpg"]
+        const darkTitles = ["the flatulent", "the mean muggler", "the stain", "the evil darkness", "the flatnose", "the edgy"]
+        let randomeDarktitles = darkTitles[Math.floor(Math.random() * 6)]
+        let randomEdgeLord = edgeLord[Math.floor(Math.random() * 6)]
+        a[i].house = randomEdgeLord
+        profile += `<div class="darkprofile-el">
+        <p class="darkname-el">${a[i].name} ${randomeDarktitles}</p>
+        <img class="house-el" src="${a[i].house}">
+        </div>`
+      }
+    } else {
+      for (let i = 0; i < a.length; i++) {
+        profile += `<div class="profile-el">
+        <p class="name-el">${a[i].name}</p>
+        <img class="house-el" src="${a[i].house}">
+        <button class="expel-el" id="expel--${a[i].id}">Expel</button>
+        </div>`
+      }
     }
-    render(b, profile)
+  render(b, profile)
   }
 //
 
@@ -85,7 +106,7 @@ const startApp = (e) => {
 //Expelling students
   const ExpelBtn = document.querySelector("#wizards")
   ExpelBtn.addEventListener('click', (e) => {
-    e.preventDefault
+    e.preventDefault()
     if (e.target.id.includes("expel")) {
       const [, id] = e.target.id.split("--")
       const index = students.findIndex( e => e.id === Number(id))

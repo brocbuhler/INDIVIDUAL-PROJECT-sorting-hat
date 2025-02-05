@@ -41,9 +41,22 @@ body {
   border-radius: 25px;
   min-width: 200px;
 }
+.darkprofile-el {
+  height: 300px;
+  width: 200px;
+  background-image: linear-gradient(rgb(0, 56, 0), #02111B);
+  border: 3px solid #52050A;
+  border-radius: 25px;
+  min-width: 200px;
+}
 .name-el {
   text-align: center;
   font-size: 20px;
+}
+.darkname-el {
+  text-align: center;
+  font-size: 20px;
+  color: rgb(138, 138, 138);
 }
 .house-el {
   height: 200px;
@@ -75,11 +88,24 @@ body {
   margin-top: 20px;
   margin-bottom: 20px;
   color: #FCFCFC;
+  font-size: 20px;
+}
+#student-field {
+  display: block;
+  width: 50%;
+  height: 30px;
+  border-radius: 25px;
+  border: none;
+  margin: auto;
+  text-align: center;
 }
 #submit-el {
   background-color: #5D737E;
   color: #52050A;
   font-weight: 200;
+  display: block;
+  margin: auto;
+  margin-top: 10px;
 }
 #house-filters {
   display: flex;
