@@ -6,7 +6,7 @@ body {
 }
 .school {
   display: flex;
-  flex-flow: row, wrap;
+  flex-flow: row wrap;
   justify-content: center;
   background-color: #5D737E;
   border: 10px outset #3e4d55;
@@ -98,6 +98,8 @@ body {
   border: none;
   margin: auto;
   text-align: center;
+  font-family: "Smythe", serif;
+  font-size: 20px;
 }
 #submit-el {
   background-color: #5D737E;
@@ -106,6 +108,8 @@ body {
   display: block;
   margin: auto;
   margin-top: 10px;
+  font-family: "Smythe", serif;
+  font-size: 20px;
 }
 #house-filters {
   display: flex;
@@ -123,6 +127,7 @@ body {
   font-weight: 300;
   font-size: 20px;
   font-family: "Smythe", serif;
+  font-weight: 300;
 }
 #view-all {
   background-color: #5D737E;
