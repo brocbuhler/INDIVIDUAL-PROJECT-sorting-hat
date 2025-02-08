@@ -1,6 +1,3 @@
-const consoleTest = (e) => {
-  console.log("Works!")
-}
 //focus on MVP
 //everything will be in a startApp function/ scope
 const startApp = (e) => {
@@ -23,13 +20,22 @@ const startApp = (e) => {
     }
   ]
 //
+
 //base website rendering
+  const btnFilters = document.querySelector("#house-filters")
+  btnFilters.innerHTML = `<button id="view-all">All</button>
+  <button id="Gryffindor">Gryffindor</button>
+  <button id="Hufflepuff">Hufflepuff</button>
+  <button id="Ravenclaw">Ravenclaw</button>
+  <button id="Slytherin">Slytherin</button>`
+
   const allStudents = document.querySelector("#AllStudents")
   allStudents.innerHTML = `<h3 class="subtitle-2">First Years</h3>
   <div class = "school" id="wizards"></div>
   <h3 class="subtitle-2">Dark Lord's Army</h3>
   <div class = "school" id="dark-wizards"></div>`
 //
+
 //basic rendering of object
   const render = (IdEl, renderItem) => {
     const hogwartsStudents = document.querySelector(IdEl);
@@ -64,7 +70,7 @@ const startApp = (e) => {
 //
 
 //new item rendering
-  const studentForm = document.querySelector("form")
+  const studentForm = document.querySelector("#student-form")
   studentForm.addEventListener("submit", newStudent)
   function newStudent(a) {
     a.preventDefault()
@@ -77,8 +83,7 @@ const startApp = (e) => {
     }
     students.push(firstYear)
     studentHouses(students, "#wizards")
-    form.reset()
-    consoleTest()
+    studentForm.reset()
   }
 //
 
@@ -116,5 +121,8 @@ const startApp = (e) => {
     }
   })
 //
+
+// rendering darkarmy on submission
+  studentHouses(darkArmy, "#dark-wizards")
+//
 }
-startApp()
