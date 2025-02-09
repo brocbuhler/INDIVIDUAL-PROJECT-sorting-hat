@@ -45,25 +45,25 @@ const startApp = (e) => {
   const studentHouses = (a, b) => {
     let profile = ""
     if (a === darkArmy) {
-      for (let i = 0; i < a.length; i++) {
+      a.forEach((student) => {
         const edgeLord = ["images/volde1.jpg", "images/volde2.webp", "images/volde3.jpg", "images/volde4.jpg", "images/volde5.jpg", "images/volde6.jpg"]
         const darkTitles = ["the flatulent", "the mean muggler", "the stain", "the evil darkness", "the flatnose", "the edgy"]
         let randomeDarktitles = darkTitles[Math.floor(Math.random() * 6)]
         let randomEdgeLord = edgeLord[Math.floor(Math.random() * 6)]
-        a[i].house = randomEdgeLord
+        student.house = randomEdgeLord
         profile += `<div class="darkprofile-el">
-        <p class="darkname-el">${a[i].name} ${randomeDarktitles}</p>
-        <img class="house-el" src="${a[i].house}">
+        <p class="darkname-el">${student.name} ${randomeDarktitles}</p>
+        <img class="house-el" src="${student.house}">
         </div>`
-      }
+      })
     } else {
-      for (let i = 0; i < a.length; i++) {
+      a.forEach((student) => {
         profile += `<div class="profile-el">
-        <p class="name-el">${a[i].name}</p>
-        <img class="house-el" src="${a[i].house}">
-        <button class="expel-el" id="expel--${a[i].id}">Expel</button>
+        <p class="name-el">${student.name}</p>
+        <img class="house-el" src="${student.house}">
+        <button class="expel-el" id="expel--${student.id}">Expel</button>
         </div>`
-      }
+      })
     }
   render(b, profile)
   }
